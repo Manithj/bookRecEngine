@@ -33,7 +33,7 @@ def load_models():
 # Load the dataset
 @st.cache_data
 def load_data():
-    df_lazy = pl.scan_csv('goodreadsV2.csv')
+    df_lazy = pl.scan_csv('https://media.githubusercontent.com/media/Manithj/bookRecEngine/refs/heads/main/goodreadsV2.csv')
     df_cleaned = (
         df_lazy.drop_nulls(subset=['name', 'summary', 'genres'])
         .with_columns([
